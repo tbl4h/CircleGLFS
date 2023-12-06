@@ -1,0 +1,14 @@
+# ninja log v5
+1	20	1701643412367070410	CMakeFiles/CircleRender.dir/GLFWModule/Shaders/Shaders.cpp.o	2ab260b3605b5d46
+1	23	1701643986153778073	CMakeFiles/CircleRender.dir/main.cpp.o	bac1b28e79c3b07d
+0	170	1701872733823731519	build.ninja	e3ecbad40dd2a320
+0	320	1701645504357081476	CMakeFiles/CircleRender.dir/GLFWModule/GLFWStorageClass/GLFWStorage.cpp.o	19a2f87e1cf08da7
+2	118	1701643986245559500	CMakeFiles/CircleRender.dir/GLFWModule/GLFWWindowClass/GLFWWindow.cpp.o	5e4fec1c7b5110a0
+1	69	1701645436285085473	CMakeFiles/CircleRender.dir/GLFWModule/GLFWInitClass/GLFWInit.cpp.o	c636c0ced8a613d3
+320	424	1701645504461038875	CircleRender	1fe1a44ce7b581dc
+1	20	1701872789516540735	CMakeFiles/CircleRender.dir/GLFWModule/Shaders/Shaders.cpp.o	2ab260b3605b5d46
+0	21	1701872789520540794	CMakeFiles/CircleRender.dir/main.cpp.o	bac1b28e79c3b07d
+2	90	1701872789588541780	CMakeFiles/CircleRender.dir/GLFWModule/GLFWWindowClass/GLFWWindow.cpp.o	5e4fec1c7b5110a0
+1	91	1701872789588541780	CMakeFiles/CircleRender.dir/GLFWModule/GLFWInitClass/GLFWInit.cpp.o	c636c0ced8a613d3
+1	319	1701872789816545088	CMakeFiles/CircleRender.dir/GLFWModule/GLFWStorageClass/GLFWStorage.cpp.o	19a2f87e1cf08da7
+319	432	1701872789928546714	CircleRender	1fe1a44ce7b581dc

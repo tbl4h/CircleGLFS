@@ -1,0 +1,4 @@
+Przepisać kod z książki obsługujący pętle do odpowiedniej klasy.
+Utworzyć klasę modułu do obsługi GLFW.
+Wywołać moduł w pętli while funkcji main.
+Kontynuować czytanie książki.

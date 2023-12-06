@@ -1,0 +1,3 @@
+/home/mic/CLionProjects/CircleRender/cmake-build-debug/CMakeFiles/CircleRender.dir
+/home/mic/CLionProjects/CircleRender/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mic/CLionProjects/CircleRender/cmake-build-debug/CMakeFiles/rebuild_cache.dir
