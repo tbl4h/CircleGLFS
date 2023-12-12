@@ -11,14 +11,17 @@
 
 class GLFWWindow {
 public:
-    GLFWWindow(unsigned int width, unsigned int heights, const char * name = "Window");
+    explicit GLFWWindow(int width = 800, int heights = 600, const char * name = "Window");
     ~GLFWWindow();
     GLFWwindow* getWindow();
 
-private:
-    GLFWwindow* _window;
+
+public:
+    static GLFWwindow* _mainWindow;
+    int _mainWindowWidth;
+    int _mainWindowHeight;
+
 
 };
-
 
 #endif //CIRCLERENDER_GLFWWINDOW_H

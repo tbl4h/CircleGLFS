@@ -10,7 +10,7 @@ GLFWInit::GLFWInit() {
     );
     if ( !glfwInit() )
         exit( EXIT_FAILURE );
-};
+}
 
 GLFWInit::~GLFWInit() {
     glfwTerminate();

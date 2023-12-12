@@ -10,16 +10,16 @@
 #include <cstdio>
 #include <cstdlib>
 
-static void errorCallback(int error, const char* description){
+static void errorCallback([[maybe_unused]] int error, const char* description){
     fprintf( stderr, "Error: %s\n", description );
-};
+}
 
 class GLFWInit {
 public:
     GLFWInit();
     ~GLFWInit();
-    void setWindow(GLFWwindow* window) ;
-    void setDefaultKeys(GLFWwindow *window);
+    static void setWindow(GLFWwindow* window) ;
+    static void setDefaultKeys(GLFWwindow *window);
 
 private:
 

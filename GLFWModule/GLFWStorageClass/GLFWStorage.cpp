@@ -6,30 +6,49 @@
 
 
 GLFWStorage::GLFWStorage() {
-    shaderVertex = glCreateShader( GL_VERTEX_SHADER );
-    glShaderSource( shaderVertex, 1, &shaderCodeVertex, nullptr );
-    glCompileShader( shaderVertex );
+    _shaderVertex = glCreateShader( GL_VERTEX_SHADER );
+    glShaderSource( _shaderVertex, 1, &shaderCodeVertex, nullptr );
+    glCompileShader( _shaderVertex );
 
-    shaderFragment = glCreateShader( GL_FRAGMENT_SHADER );
-    glShaderSource( shaderFragment, 1, &shaderCodeFragment, nullptr );
-    glCompileShader( shaderFragment );
+    _shaderFragment = glCreateShader( GL_FRAGMENT_SHADER );
+    glShaderSource( _shaderFragment, 1, &shaderCodeFragment, nullptr );
+    glCompileShader( _shaderFragment );
 
-    program = glCreateProgram();
-    glAttachShader( program, shaderVertex );
-    glAttachShader( program, shaderFragment );
+    _program = glCreateProgram();
+    glAttachShader( _program, _shaderVertex );
+    glAttachShader( _program, _shaderFragment );
 
-    glLinkProgram( program );
-    glUseProgram( program );
+    glLinkProgram( _program );
+    glUseProgram( _program );
 
-    glCreateVertexArrays( 1, &vao );
-    glBindVertexArray( vao );
+    glCreateVertexArrays( 1, &_vao );
+    glBindVertexArray( _vao );
 
-    glClearColor( 1.0f, 1.0f, 1.0f, 1.0f );
-};
+    _kBufferSize = sizeof(PerFrameData);
+
+
+    glCreateBuffers(1, &_perFrameDataBuffer);
+    glNamedBufferStorage(_perFrameDataBuffer, _kBufferSize, nullptr, GL_DYNAMIC_STORAGE_BIT);
+    glBindBufferRange(GL_UNIFORM_BUFFER, 0, _perFrameDataBuffer, 0, _kBufferSize);
+
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_POLYGON_OFFSET_LINE);
+    glPolygonOffset(-1.0f, -1.0f);
+}
 
 GLFWStorage::~GLFWStorage() {
-    glDeleteProgram( program );
-    glDeleteShader( shaderFragment );
-    glDeleteShader( shaderVertex );
-    glDeleteVertexArrays( 1, &vao );
+    glDeleteBuffers(1, &_perFrameDataBuffer);
+    glDeleteProgram( _program );
+    glDeleteShader( _shaderFragment );
+    glDeleteShader( _shaderVertex );
+    glDeleteVertexArrays( 1, &_vao );
+}
+
+GLuint GLFWStorage::getPerFrameDataBuffer() const {
+    return _perFrameDataBuffer;
+}
+
+GLsizeiptr GLFWStorage::getKBufferSize() const {
+    return _kBufferSize;
 }

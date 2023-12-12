@@ -1,4 +1,7 @@
-Przepisać kod z książki obsługujący pętle do odpowiedniej klasy.
-Utworzyć klasę modułu do obsługi GLFW.
-Wywołać moduł w pętli while funkcji main.
-Kontynuować czytanie książki.
+Poprawić plik CMakeLists.txt dla modułu obsługującego opengl:
+    Dodać pliki dla vertexShader.
+    Dodać pliki dla fragmentShader.
+
+
+Do rozważenia - kwestie optymalizacji.
+W klasie ShaderClass rozważyć użycie string_vew zamiast string.

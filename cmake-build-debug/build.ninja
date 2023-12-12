@@ -47,47 +47,14 @@ cmake_ninja_workdir = /home/mic/CLionProjects/CircleRender/cmake-build-debug/
 #############################################
 # Order-only phony target for CircleRender
 
-build cmake_object_order_depends_target_CircleRender: phony || CMakeFiles/CircleRender.dir
+build cmake_object_order_depends_target_CircleRender: phony || cmake_object_order_depends_target_GLFWModule
 
 build CMakeFiles/CircleRender.dir/main.cpp.o: CXX_COMPILER__CircleRender_unscanned_Debug /home/mic/CLionProjects/CircleRender/main.cpp || cmake_object_order_depends_target_CircleRender
   DEP_FILE = CMakeFiles/CircleRender.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWInitClass/GLFWInit.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWWindowClass/GLFWWindow.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWStorageClass/GLFWStorage.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWModuleClass/GLFWModule.h
   OBJECT_DIR = CMakeFiles/CircleRender.dir
   OBJECT_FILE_DIR = CMakeFiles/CircleRender.dir
-  TARGET_COMPILE_PDB = CMakeFiles/CircleRender.dir/
-  TARGET_PDB = CircleRender.pdb
-
-build CMakeFiles/CircleRender.dir/GLFWModule/Shaders/Shaders.cpp.o: CXX_COMPILER__CircleRender_unscanned_Debug /home/mic/CLionProjects/CircleRender/GLFWModule/Shaders/Shaders.cpp || cmake_object_order_depends_target_CircleRender
-  DEP_FILE = CMakeFiles/CircleRender.dir/GLFWModule/Shaders/Shaders.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/CircleRender.dir
-  OBJECT_FILE_DIR = CMakeFiles/CircleRender.dir/GLFWModule/Shaders
-  TARGET_COMPILE_PDB = CMakeFiles/CircleRender.dir/
-  TARGET_PDB = CircleRender.pdb
-
-build CMakeFiles/CircleRender.dir/GLFWModule/GLFWInitClass/GLFWInit.cpp.o: CXX_COMPILER__CircleRender_unscanned_Debug /home/mic/CLionProjects/CircleRender/GLFWModule/GLFWInitClass/GLFWInit.cpp || cmake_object_order_depends_target_CircleRender
-  DEP_FILE = CMakeFiles/CircleRender.dir/GLFWModule/GLFWInitClass/GLFWInit.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/CircleRender.dir
-  OBJECT_FILE_DIR = CMakeFiles/CircleRender.dir/GLFWModule/GLFWInitClass
-  TARGET_COMPILE_PDB = CMakeFiles/CircleRender.dir/
-  TARGET_PDB = CircleRender.pdb
-
-build CMakeFiles/CircleRender.dir/GLFWModule/GLFWWindowClass/GLFWWindow.cpp.o: CXX_COMPILER__CircleRender_unscanned_Debug /home/mic/CLionProjects/CircleRender/GLFWModule/GLFWWindowClass/GLFWWindow.cpp || cmake_object_order_depends_target_CircleRender
-  DEP_FILE = CMakeFiles/CircleRender.dir/GLFWModule/GLFWWindowClass/GLFWWindow.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/CircleRender.dir
-  OBJECT_FILE_DIR = CMakeFiles/CircleRender.dir/GLFWModule/GLFWWindowClass
-  TARGET_COMPILE_PDB = CMakeFiles/CircleRender.dir/
-  TARGET_PDB = CircleRender.pdb
-
-build CMakeFiles/CircleRender.dir/GLFWModule/GLFWStorageClass/GLFWStorage.cpp.o: CXX_COMPILER__CircleRender_unscanned_Debug /home/mic/CLionProjects/CircleRender/GLFWModule/GLFWStorageClass/GLFWStorage.cpp || cmake_object_order_depends_target_CircleRender
-  DEP_FILE = CMakeFiles/CircleRender.dir/GLFWModule/GLFWStorageClass/GLFWStorage.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/CircleRender.dir
-  OBJECT_FILE_DIR = CMakeFiles/CircleRender.dir/GLFWModule/GLFWStorageClass
-  TARGET_COMPILE_PDB = CMakeFiles/CircleRender.dir/
-  TARGET_PDB = CircleRender.pdb
 
 
 # =============================================================================
@@ -97,15 +64,14 @@ build CMakeFiles/CircleRender.dir/GLFWModule/GLFWStorageClass/GLFWStorage.cpp.o:
 #############################################
 # Link the executable CircleRender
 
-build CircleRender: CXX_EXECUTABLE_LINKER__CircleRender_Debug CMakeFiles/CircleRender.dir/main.cpp.o CMakeFiles/CircleRender.dir/GLFWModule/Shaders/Shaders.cpp.o CMakeFiles/CircleRender.dir/GLFWModule/GLFWInitClass/GLFWInit.cpp.o CMakeFiles/CircleRender.dir/GLFWModule/GLFWWindowClass/GLFWWindow.cpp.o CMakeFiles/CircleRender.dir/GLFWModule/GLFWStorageClass/GLFWStorage.cpp.o | /usr/lib/x86_64-linux-gnu/libOpenGL.so /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libglfw.so.3.3
+build CircleRender: CXX_EXECUTABLE_LINKER__CircleRender_Debug CMakeFiles/CircleRender.dir/main.cpp.o | GLFWModule/libGLFWModule.a /usr/lib/x86_64-linux-gnu/libOpenGL.so /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libglfw.so.3.3 || GLFWModule/libGLFWModule.a
   FLAGS = -g
-  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libOpenGL.so  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libGLU.so  /usr/lib/x86_64-linux-gnu/libglfw.so.3.3  -lGLEW
+  LINK_LIBRARIES = GLFWModule/libGLFWModule.a  /usr/lib/x86_64-linux-gnu/libOpenGL.so  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libGLU.so  /usr/lib/x86_64-linux-gnu/libglfw.so.3.3  -lGLEW  -lglad
   OBJECT_DIR = CMakeFiles/CircleRender.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/CircleRender.dir/
   TARGET_FILE = CircleRender
-  TARGET_PDB = CircleRender.pdb
+  TARGET_PDB = CircleRender.dbg
 
 
 #############################################
@@ -131,7 +97,99 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/mic/CLionProjects/CircleRender/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target GLFWModule
+
+
+#############################################
+# Order-only phony target for GLFWModule
+
+build cmake_object_order_depends_target_GLFWModule: phony || GLFWModule/CMakeFiles/GLFWModule.dir
+
+build GLFWModule/CMakeFiles/GLFWModule.dir/GLFWInitClass/GLFWInit.cpp.o: CXX_COMPILER__GLFWModule_unscanned_Debug /home/mic/CLionProjects/CircleRender/GLFWModule/GLFWInitClass/GLFWInit.cpp || cmake_object_order_depends_target_GLFWModule
+  DEP_FILE = GLFWModule/CMakeFiles/GLFWModule.dir/GLFWInitClass/GLFWInit.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWInitClass/GLFWInit.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWWindowClass/GLFWWindow.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWStorageClass/GLFWStorage.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWModuleClass/GLFWModule.h
+  OBJECT_DIR = GLFWModule/CMakeFiles/GLFWModule.dir
+  OBJECT_FILE_DIR = GLFWModule/CMakeFiles/GLFWModule.dir/GLFWInitClass
+
+build GLFWModule/CMakeFiles/GLFWModule.dir/GLFWWindowClass/GLFWWindow.cpp.o: CXX_COMPILER__GLFWModule_unscanned_Debug /home/mic/CLionProjects/CircleRender/GLFWModule/GLFWWindowClass/GLFWWindow.cpp || cmake_object_order_depends_target_GLFWModule
+  DEP_FILE = GLFWModule/CMakeFiles/GLFWModule.dir/GLFWWindowClass/GLFWWindow.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWInitClass/GLFWInit.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWWindowClass/GLFWWindow.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWStorageClass/GLFWStorage.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWModuleClass/GLFWModule.h
+  OBJECT_DIR = GLFWModule/CMakeFiles/GLFWModule.dir
+  OBJECT_FILE_DIR = GLFWModule/CMakeFiles/GLFWModule.dir/GLFWWindowClass
+
+build GLFWModule/CMakeFiles/GLFWModule.dir/GLFWStorageClass/GLFWStorage.cpp.o: CXX_COMPILER__GLFWModule_unscanned_Debug /home/mic/CLionProjects/CircleRender/GLFWModule/GLFWStorageClass/GLFWStorage.cpp || cmake_object_order_depends_target_GLFWModule
+  DEP_FILE = GLFWModule/CMakeFiles/GLFWModule.dir/GLFWStorageClass/GLFWStorage.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWInitClass/GLFWInit.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWWindowClass/GLFWWindow.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWStorageClass/GLFWStorage.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWModuleClass/GLFWModule.h
+  OBJECT_DIR = GLFWModule/CMakeFiles/GLFWModule.dir
+  OBJECT_FILE_DIR = GLFWModule/CMakeFiles/GLFWModule.dir/GLFWStorageClass
+
+build GLFWModule/CMakeFiles/GLFWModule.dir/GLFWModuleClass/GLFWModule.cpp.o: CXX_COMPILER__GLFWModule_unscanned_Debug /home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModuleClass/GLFWModule.cpp || cmake_object_order_depends_target_GLFWModule
+  DEP_FILE = GLFWModule/CMakeFiles/GLFWModule.dir/GLFWModuleClass/GLFWModule.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWInitClass/GLFWInit.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWWindowClass/GLFWWindow.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWStorageClass/GLFWStorage.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWModuleClass/GLFWModule.h
+  OBJECT_DIR = GLFWModule/CMakeFiles/GLFWModule.dir
+  OBJECT_FILE_DIR = GLFWModule/CMakeFiles/GLFWModule.dir/GLFWModuleClass
+
+build GLFWModule/CMakeFiles/GLFWModule.dir/GLFWInitClass/ShaderClass/Shader.cpp.o: CXX_COMPILER__GLFWModule_unscanned_Debug /home/mic/CLionProjects/CircleRender/GLFWModule/GLFWInitClass/ShaderClass/Shader.cpp || cmake_object_order_depends_target_GLFWModule
+  DEP_FILE = GLFWModule/CMakeFiles/GLFWModule.dir/GLFWInitClass/ShaderClass/Shader.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWInitClass/GLFWInit.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWWindowClass/GLFWWindow.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWStorageClass/GLFWStorage.h -I/home/mic/CLionProjects/CircleRender/GLFWModule/GLFWModule/GLFWModuleClass/GLFWModule.h
+  OBJECT_DIR = GLFWModule/CMakeFiles/GLFWModule.dir
+  OBJECT_FILE_DIR = GLFWModule/CMakeFiles/GLFWModule.dir/GLFWInitClass/ShaderClass
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target GLFWModule
+
+
+#############################################
+# Link the static library GLFWModule/libGLFWModule.a
+
+build GLFWModule/libGLFWModule.a: CXX_STATIC_LIBRARY_LINKER__GLFWModule_Debug GLFWModule/CMakeFiles/GLFWModule.dir/GLFWInitClass/GLFWInit.cpp.o GLFWModule/CMakeFiles/GLFWModule.dir/GLFWWindowClass/GLFWWindow.cpp.o GLFWModule/CMakeFiles/GLFWModule.dir/GLFWStorageClass/GLFWStorage.cpp.o GLFWModule/CMakeFiles/GLFWModule.dir/GLFWModuleClass/GLFWModule.cpp.o GLFWModule/CMakeFiles/GLFWModule.dir/GLFWInitClass/ShaderClass/Shader.cpp.o || /usr/lib/x86_64-linux-gnu/libglfw.so.3.3
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = GLFWModule/CMakeFiles/GLFWModule.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = GLFWModule/libGLFWModule.a
+  TARGET_PDB = GLFWModule.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build GLFWModule/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/mic/CLionProjects/CircleRender/cmake-build-debug/GLFWModule && /snap/clion/259/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build GLFWModule/edit_cache: phony GLFWModule/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build GLFWModule/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/mic/CLionProjects/CircleRender/cmake-build-debug/GLFWModule && /snap/clion/259/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/mic/CLionProjects/CircleRender -B/home/mic/CLionProjects/CircleRender/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build GLFWModule/rebuild_cache: phony GLFWModule/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
+
+build GLFWModule: phony GLFWModule/libGLFWModule.a
+
+build libGLFWModule.a: phony GLFWModule/libGLFWModule.a
 
 # =============================================================================
 # Folder targets.
@@ -141,7 +199,14 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/mic/CLionProjects/CircleRender/cmake-build-debug
 
-build all: phony CircleRender
+build all: phony CircleRender GLFWModule/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/mic/CLionProjects/CircleRender/cmake-build-debug/GLFWModule
+
+build GLFWModule/all: phony GLFWModule/libGLFWModule.a
 
 # =============================================================================
 # Built-in targets
@@ -150,14 +215,14 @@ build all: phony CircleRender
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/mic/CLionProjects/CircleRender/CMakeLists.txt /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCCompiler.cmake.in /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCCompilerABI.c /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCXXCompiler.cmake.in /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCompilerIdDetection.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeDetermineCompileFeatures.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeDetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeFindBinUtils.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeParseImplicitIncludeInfo.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeParseImplicitLinkInfo.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeParseLibraryArchitecture.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystem.cmake.in /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeTestCompilerCommon.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/ADSP-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/ARMCC-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/ARMClang-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/AppleClang-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Borland-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Cray-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GHS-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-FindBinUtils.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/HP-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/IAR-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Intel-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/LCC-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/MSVC-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/NVHPC-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/PGI-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/PathScale-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/SCO-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/TI-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Tasking-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Watcom-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/XL-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/zOS-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindGLEW.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindOpenGL.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindVulkan.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Internal/FeatureTesting.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-Determine-CXX.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-C.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-Initialize.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/SelectLibraryConfigurations.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Config.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3ConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Targets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Targets.cmake CMakeCache.txt CMakeFiles/3.27.0/CMakeCCompiler.cmake CMakeFiles/3.27.0/CMakeCXXCompiler.cmake CMakeFiles/3.27.0/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/mic/CLionProjects/CircleRender/CMAKE_MODULE_PATH/Findglad.cmake /home/mic/CLionProjects/CircleRender/CMakeLists.txt /home/mic/CLionProjects/CircleRender/GLFWModule/CMakeLists.txt /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindGLEW.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindOpenGL.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindVulkan.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-C.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-Initialize.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/SelectLibraryConfigurations.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Config.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3ConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Targets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Targets.cmake CMakeCache.txt CMakeFiles/3.27.0/CMakeCCompiler.cmake CMakeFiles/3.27.0/CMakeCXXCompiler.cmake CMakeFiles/3.27.0/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/mic/CLionProjects/CircleRender/CMakeLists.txt /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCCompiler.cmake.in /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCCompilerABI.c /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCXXCompiler.cmake.in /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCompilerIdDetection.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeDetermineCompileFeatures.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeDetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeFindBinUtils.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeParseImplicitIncludeInfo.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeParseImplicitLinkInfo.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeParseLibraryArchitecture.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystem.cmake.in /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeTestCompilerCommon.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/ADSP-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/ARMCC-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/ARMClang-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/AppleClang-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Borland-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Cray-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GHS-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-FindBinUtils.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/HP-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/IAR-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Intel-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/LCC-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/MSVC-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/NVHPC-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/PGI-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/PathScale-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/SCO-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/TI-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Tasking-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/Watcom-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/XL-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/zOS-C-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindGLEW.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindOpenGL.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindVulkan.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Internal/FeatureTesting.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-Determine-CXX.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-C.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-Initialize.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/SelectLibraryConfigurations.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Config.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3ConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Targets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Targets.cmake CMakeCache.txt CMakeFiles/3.27.0/CMakeCCompiler.cmake CMakeFiles/3.27.0/CMakeCXXCompiler.cmake CMakeFiles/3.27.0/CMakeSystem.cmake: phony
+build /home/mic/CLionProjects/CircleRender/CMAKE_MODULE_PATH/Findglad.cmake /home/mic/CLionProjects/CircleRender/CMakeLists.txt /home/mic/CLionProjects/CircleRender/GLFWModule/CMakeLists.txt /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindGLEW.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindOpenGL.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindVulkan.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-C.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-Initialize.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /snap/clion/259/bin/cmake/linux/x64/share/cmake-3.27/Modules/SelectLibraryConfigurations.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Config.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3ConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Targets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Targets.cmake CMakeCache.txt CMakeFiles/3.27.0/CMakeCCompiler.cmake CMakeFiles/3.27.0/CMakeCXXCompiler.cmake CMakeFiles/3.27.0/CMakeSystem.cmake: phony
 
 
 #############################################
